@@ -28,11 +28,14 @@
   "homepage": "https://github.com/cjochoa0/Project-Web-Stack-Client#readme",
   "devDependencies": {
     "cssmin": "^0.4.3",
+    "grunt": "^1.0.2",
+    "jit-grunt": "^0.10.0",
     "lite-server": "^2.6.1",
     "node-sass": "^7.0.1",
     "onchange": "^3.3.0",
     "parallelshell": "^3.0.2",
     "rimraf": "^2.6.2",
+    "time-grunt": "^1.4.0",
     "uglifyjs": "^2.4.11",
     "usemin-cli": "^0.5.1"
   },
