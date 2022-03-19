@@ -36,7 +36,7 @@
                             class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                 <a data-toggle="modal" data-target="#loginModal">
+                 <a id="login_button_modal">
                     <span class="fa fa-sign-in"></span> Login
                  </a>
                 </span>
@@ -100,12 +100,8 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-6 col-sm align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                     data-html="true" title="Or
-                    Call us at <br><strong>+852 12345678</strong>"
-                    data-placement="bottom" data-toggle="modal" data-target="#reserveModal">Reserve
-                    Table</a>
-
+                    <a role="button" class="btn btn-block nav-link btn-warning" id="reserve_button_modal">
+                        Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -373,6 +369,16 @@ shrink-to-fit=no">
             $("#carousel-play").click(function(){
                 $("#mycarousel").carousel('cycle');
             });
+        });
+    </script>
+    <script>
+        $('#reserve_button_modal').click(function(){
+            $('#reserveModal').modal('show')
+        });
+    </script>
+    <script>
+        $('#login_button_modal').click(function(){
+            $('#loginModal').modal('show')
         });
     </script>
     <script src="js/scripts.js"></script>
