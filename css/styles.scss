@@ -64,3 +64,16 @@ body{
   bottom: 0px;
   z-index: 1;
 }
+
+.modal{
+  button{
+    color: $lt-gray;
+  }
+}
+.modal-header{
+  background: $background-dark;
+  color: $lt-gray
+}
+.modal-body{
+  background: $background-pale;
+}
