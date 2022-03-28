@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 
+function RenderDish({dish}){
+    if(dish != null){
+        return(
+            <Card>
+                <CardImg width="100%" src={dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle>{dish.name}</CardTitle>
+                    <CardText>{dish.description}</CardText>
+                </CardBody>
+            </Card>
+        );
+    } else{
+        return null;
+    }
+
+}
 
 function RenderComments(comments){
     if(comments != null){
@@ -16,19 +32,14 @@ function RenderComments(comments){
         ));
     } else return <div />
 }
+
 const DishDetail = (props) => {
     const { dish } = props;
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-5 m-1">
-                        <Card>
-                            <CardImg top src={dish.image} alt={dish.name} />
-                            <CardBody>
-                                <CardTitle>{dish.name}</CardTitle>
-                                <CardText>{dish.description}</CardText>
-                            </CardBody>
-                        </Card>
+                        {RenderDish({dish})}
                     </div>
                     <div className="col-12 col-md-5 m-1">
                         <h4>Comments</h4>
