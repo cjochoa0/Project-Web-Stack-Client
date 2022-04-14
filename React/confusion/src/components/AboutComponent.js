@@ -4,9 +4,19 @@ import {Link} from 'react-router-dom';
 
 function RenderLeader({leader}) {
     return(
-        <div>
-            
+        <div className="row row-content align-items-center">
+            <img className="d-flex mr-3 img-thumbnail align-self-center"
+                src={leader.image} alt={leader.name} />
+            <div className="col col-sm order-sm-first col-md">
+                <div className="media-body">
+                    <h2 className="mt-0">{leader.name}</h2>
+                    <h4>{leader.designation}</h4>
+                    <p className="d-none d-sm-block">{leader.description}</p>
+                </div>
+            </div>
         </div>
+
+
     );
 }
 
@@ -14,7 +24,9 @@ function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <p>Leader {leader.name}</p>
+            <div className="col-12 col-md-5 m-1" key={leader.id}>
+                <RenderLeader leader={leader}/>
+            </div>
         );
     });
 
