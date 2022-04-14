@@ -22,7 +22,7 @@ class Header extends Component {
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src='assets/images/logo.png' height="30" width="41" alt='Ristorante ConFusion' />
+                            <img src='/assets/images/logo.png' height="30" width="41" alt='Ristorante ConFusion' />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -46,7 +46,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <Jumbotron>
+                <Jumbotron className="jumbotron">
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
@@ -54,6 +54,9 @@ class Header extends Component {
                                 <p>We take inspiration from the World's
                                     best cuisines, and create a unique fusion experience. Our lipsmacking
                                     creations will tickle your culinary senses!</p>
+                            </div>
+                            <div className="col-12 col-sm align-self-center">
+                                <img src='/assets/images/logo.png' className="img-fluid" />;
                             </div>
                         </div>
                     </div>
