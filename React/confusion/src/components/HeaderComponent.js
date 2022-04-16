@@ -46,7 +46,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <Jumbotron className="jumbotron">
+                <Jumbotron>
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
@@ -56,7 +56,7 @@ class Header extends Component {
                                     creations will tickle your culinary senses!</p>
                             </div>
                             <div className="col-12 col-sm align-self-center">
-                                <img src='/assets/images/logo.png' className="img-fluid" />;
+                                <img src='/assets/images/logo.png' className="img-fluid" />
                             </div>
                         </div>
                     </div>
