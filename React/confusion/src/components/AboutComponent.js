@@ -5,13 +5,15 @@ import {Link} from 'react-router-dom';
 function RenderLeader({leader}) {
     return(
         <div className="row row-content align-items-center">
-            <img className="d-flex mr-3 img-thumbnail align-self-center"
-                src={leader.image} alt={leader.name} />
             <div className="col col-sm order-sm-first col-md">
-                <div className="media-body">
-                    <h2 className="mt-0">{leader.name}</h2>
-                    <h4>{leader.designation}</h4>
-                    <p className="d-none d-sm-block">{leader.description}</p>
+                <div className="media">
+                    <img className="d-flex mr-3 img-fluid rounded align-self-center"
+                         src={leader.image} alt={leader.name} />
+                    <div className="media-body text-left">
+                        <h2 className="mt-0">{leader.name}</h2>
+                        <p>{leader.designation}</p>
+                        <p className="d-none d-sm-block">{leader.description}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,7 +26,7 @@ function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <div className="col-12 col-md-5 m-1" key={leader.id}>
+            <div  key={leader.id}>
                 <RenderLeader leader={leader}/>
             </div>
         );
