@@ -36,7 +36,7 @@ class CommentForm extends Component{
                     <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                     <ModalBody>
                         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                            <FormGroup row>
+                            <FormGroup>
                                 <label htmlFor="rating" md={2}>Rating</label>
                                 <Col md={10}>
                                     <Control.select model=".rating" name="Rating" className="form-control">
@@ -48,7 +48,7 @@ class CommentForm extends Component{
                                     </Control.select>
                                 </Col>
                             </FormGroup>
-                            <FormGroup row>
+                            <FormGroup>
                                 <label htmlFor="author" md={2}>Your Name</label>
                                 <Col md={10}>
                                     <Control.text model=".author" id="author" name="author"
@@ -69,7 +69,7 @@ class CommentForm extends Component{
                                     />
                                 </Col>
                             </FormGroup>
-                            <FormGroup row>
+                            <FormGroup>
                                 <label htmlFor="Comment" md={2}>Comment</label>
                                 <Col md={10}>
                                     <Control.textarea model=".comment" id="comment" name="comment"
@@ -77,8 +77,8 @@ class CommentForm extends Component{
                                                       className="form-control" />
                                 </Col>
                             </FormGroup>
-                            <FormGroup row>
-                                <Col md={{size: 10, offset: 2}}>
+                            <FormGroup>
+                                <Col md={10}>
                                     <Button type="submit" color="primary">
                                         Submit
                                     </Button>
