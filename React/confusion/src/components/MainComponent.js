@@ -56,10 +56,6 @@ class Main extends Component {
         this.props.fetchPromos();
     }
 
-    componentDidMount() {
-        this.props.fetchDishes();
-    }
-
     render() {
         const HomePage = () => {
             return(
