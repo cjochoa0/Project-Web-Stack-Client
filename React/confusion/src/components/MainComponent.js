@@ -12,7 +12,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
-import { addComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
+import { addComment, postComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
 import { actions } from 'react-redux-form';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -31,7 +31,9 @@ const mapDispatchToProps = dispatch => ({
     fetchDishes: () => { dispatch(fetchDishes())},
     resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
     fetchComments: () => dispatch(fetchComments()),
-    fetchPromos: () => dispatch(fetchPromos())
+    fetchPromos: () => dispatch(fetchPromos()),
+    postComment: (dishId, rating, author, comment) =>
+        dispatch(postComment(dishId, rating, author, comment))
 });
 
 class Main extends Component {
@@ -64,6 +66,7 @@ class Main extends Component {
                         dish.featured)[0]}
                     dishesLoading={this.props.dishes.isLoading}
                     dishErrMess={this.props.dishes.errMess}
+                    postComment={this.props.postComment}
                     promotion={this.props.promotions.promotions.filter((promo) =>
                         promo.featured)[0]}
                     promoLoading={this.props.promotions.isLoading}

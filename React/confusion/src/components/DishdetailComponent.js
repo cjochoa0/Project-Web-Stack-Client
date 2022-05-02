@@ -30,7 +30,7 @@ function RenderDish({dish}){
 
 }
 
-function RenderComments({comments,  dishId}) {
+function RenderComments({comments, postComment, dishId}) {
     if(comments != null){
         let commentList =
             <Stagger in>
@@ -51,7 +51,7 @@ function RenderComments({comments,  dishId}) {
                 <ul className="list-unstyled">
                     {commentList}
                 </ul>
-                <CommentForm dishId={dishId} />
+                <CommentForm dishId={dishId} postComment={postComment}/>
             </React.Fragment>
             );
 
@@ -98,7 +98,8 @@ const DishDetail = (props) => {
                             <RenderDish dish={props.dish} />
                         </div>
                         <div className="col-12 col-md-5 m-1">
-                            <RenderComments comments={props.comments} dishId={props.dish.id} />
+                            <RenderComments comments={props.comments} postComment={props.postComment}
+                                            dishId={props.dish.id} />
                         </div>
                     </div>
                 </div>
