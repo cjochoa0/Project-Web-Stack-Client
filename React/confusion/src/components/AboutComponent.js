@@ -1,6 +1,7 @@
 import React from 'react';
 import {Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media} from 'reactstrap';
 import {Link} from 'react-router-dom';
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderLeader({leader}) {
     return(
@@ -8,7 +9,7 @@ function RenderLeader({leader}) {
             <div className="col col-sm order-sm-first col-md">
                 <div className="media">
                     <img className="d-flex mr-3 img-fluid rounded align-self-center"
-                         src={leader.image} alt={leader.name} />
+                         src={baseUrl + leader.image} alt={leader.name} />
                     <div className="media-body text-left">
                         <h2 className="mt-0">{leader.name}</h2>
                         <p>{leader.designation}</p>
