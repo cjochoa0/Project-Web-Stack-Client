@@ -1,15 +1,11 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
-export const addComment = (dishId, rating, author, comment) => ({
+export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
-    payload: {
-        dishId: dishId,
-        rating: rating,
-        author: author,
-        comment: comment
-    }
+    payload: comment
 });
+
 export const postComment = (dishId, rating, author, comment) => (dispatch) => {
     const newComment = {
         dishId: dishId,
@@ -25,7 +21,7 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
         headers: {
             "Content-Type": "application/json"
         },
-        credentials: "same-origin}"
+        credentials: "same-origin"
         })
         .then(response => {
             if (response.ok) {
@@ -170,3 +166,30 @@ export const addLeaders = (leaders) => ({
     type: ActionTypes.ADD_LEADERS,
     payload: leaders
 });
+export const postFeedback = (feedback) => (dispatch) => {
+    console.log('feedback', feedback);
+    return fetch(baseUrl + 'feedback', {
+        method: "POST",
+        body: JSON.stringify(feedback),
+        headers: {
+            "Content-Type": "application/json"
+        },
+        credentials: "same-origin"
+    })
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                var error = new Error('Error ' + response.status + ': ' +
+                    response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+        error => {
+            throw error;
+        })
+        .then(response => response.json())
+        .catch(error => { console.log('post feedbacks', error.message);
+            alert('Your feedback could not be poster\nError: '+error.message)});
+};
