@@ -45,7 +45,7 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
         .catch(error => { console.log('post comments', error.message);
             alert('Your comment could not be posted\nError: '+error.message); });
     };
-    export const fetchDishes = () => (dispatch) => {
+export const fetchDishes = () => (dispatch) => {
     dispatch(dishesLoading(true));
     return fetch(baseUrl + 'dishes')
         .then(response => {
@@ -65,7 +65,7 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
         .then(response => response.json())
         .then(dishes => dispatch(addDishes(dishes)))
         .catch(error => dispatch(dishesFailed(error.message)));
-}
+};
 export const dishesLoading = () => ({
     type: ActionTypes.DISHES_LOADING
 });

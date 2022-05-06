@@ -25,7 +25,7 @@ function RenderLeader({leader}) {
 
 function About(props) {
 
-    const leaders = props.leaders.map((leader) => {
+    const leaders = props.leaders.leaders.map((leader) => {
         return (
             <div key={leader.id}>
                 <RenderLeader leader={leader}/>
