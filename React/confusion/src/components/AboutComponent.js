@@ -2,22 +2,27 @@ import React from 'react';
 import {Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 function RenderLeader({leader}) {
     return(
-        <div className="row row-content align-items-center">
-            <div className="col col-sm order-sm-first col-md">
-                <div className="media">
-                    <img className="d-flex mr-3 img-fluid rounded align-self-center"
-                         src={baseUrl + leader.image} alt={leader.name} />
-                    <div className="media-body text-left">
-                        <h2 className="mt-0">{leader.name}</h2>
-                        <p>{leader.designation}</p>
-                        <p className="d-none d-sm-block">{leader.description}</p>
+        <Stagger in>
+            <Fade in>
+                <div className="row row-content align-items-center">
+                    <div className="col col-sm order-sm-first col-md">
+                        <div className="media">
+                            <img className="d-flex mr-3 img-fluid rounded align-self-center"
+                                 src={baseUrl + leader.image} alt={leader.name} />
+                            <div className="media-body text-left">
+                                <h2 className="mt-0">{leader.name}</h2>
+                                <p>{leader.designation}</p>
+                                <p className="d-none d-sm-block">{leader.description}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </Fade>
+        </Stagger>
 
 
     );
