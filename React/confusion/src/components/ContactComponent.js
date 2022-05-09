@@ -20,7 +20,7 @@ class Contact extends Component {
         this.props.postFeedback(values);
         this.props.resetFeedbackForm();
     }
-    
+
     handleCancel() {
         this.props.resetFeedbackForm();
     }
